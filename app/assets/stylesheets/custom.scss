@@ -1,0 +1,177 @@
+* {
+	box-sizing: border-box;
+}
+
+html, body {
+	font-family: 'Raleway', sans-serif;
+	padding: 0;
+	margin: 0;
+	font-size: 14px;
+}
+
+body {
+	background: rgba(7, 7, 7, 0.075);
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	padding: 0;
+	margin: 0;
+	line-height: 1;
+}
+
+/*
+	===================
+	CONTENT DIV
+	===================
+*/ 
+.content {
+	display: grid;
+	gap: 20px;
+	height: 100vh;
+	grid-template-columns: 120px 1fr 120px;
+	grid-template-rows: 100px 1fr 60px;
+	grid-template-areas:
+		"header header header"
+		"...... main   ......"
+		"footer footer footer";
+	justify-content: center;
+}
+
+/* 
+	====================
+	HEADER
+	====================
+*/
+
+header {
+	background: #fff;
+	display: flex;
+	justify-content: space-around;
+	position: fixed;
+	height: 100px;
+	width: 100%;
+	z-index: 99;
+	grid-area: header;
+	border-bottom: 5px double rgba(22, 69, 156, 0.644);
+}
+
+.header {
+	display: grid;
+	gap: 10px;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 100%;
+	justify-content: space-between;
+	align-items: center;
+	padding: 5px 15px;
+	width: 80%;
+
+}
+
+.header-left {
+	height: 80px;
+	display: flex;
+	align-items: center;
+}
+.logo {
+	height: 100%;
+	width: 60px;
+}
+
+.logo img {
+	height: 100%;
+}
+
+.header-left h1 {
+	justify-self: center;
+	flex: 3;
+	color: rgb(61, 61, 61);
+	text-shadow: lightgrey 0 -1.5px;
+	cursor: default;
+}
+
+.header-left h1:hover {
+	color: rgba(61, 61, 61, 0.5);
+}
+.header-links {
+	padding: 0;
+	display: flex;
+	justify-content: space-around;
+}
+
+.header-links li {
+	list-style: none;
+	height: 40px;
+	width: 90px;
+	font-size: 18px;
+	border-radius: 5px;
+	background: rgba(104, 104, 44, 0.534);
+	display: flex;
+	justify-content: center;
+}
+
+.header-links li:hover {
+	box-shadow: 0 6px 6px -6px grey;
+}
+.header-links a {
+	padding: 5px;
+	text-decoration: none;
+	color: black;
+	font-weight: 500;
+	align-self: center;
+}
+
+
+/*
+	========================
+	MAIN
+	========================
+*/
+.main {
+	grid-area: main;
+	grid-row: 2 / -2;
+	justify-self: center;
+	align-self: center;
+}
+
+/*
+	=====================
+	FOOTER
+	=====================
+*/ 
+footer {
+	grid-area: footer;
+	height: 40px;
+	width: 100%;
+	background: white;
+	place-self: end / center;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 100px;
+	margin-bottom: 20px;
+}
+
+.bottom-links {
+	display: flex;
+	padding: 0;
+}
+
+.bottom-links li {
+	list-style: none;
+	padding: 0 15px;
+}
+
+.bottom-link {
+	text-decoration: none;
+	color: grey;
+	font-size: 14px;
+}
+
+.bottom-link:hover {
+	color: darkgrey;
+}
+

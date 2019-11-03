@@ -2,19 +2,23 @@
 <html>
   <head>
     <title>RememberToCook</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+		<%= render "layouts/rails_defaults" %>
+		<%= render "layouts/shim" %>
+		<link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
   </head>
 
   <body>
-		<div class="container flash">
-			<% flash.each do |message_type, message| %>
-				<%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
-			<% end %>
+		<div class="content">
+			<%= render "layouts/header" %>
+			<section class="main">
+				<div class="flash">
+					<% flash.each do |message_type, message| %>
+						<%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
+					<% end %>
+				</div>
+				<%= yield %>
+			</section>
+			<%= render "layouts/footer" %>
 		</div>
-    <%= yield %>
   </body>
 </html>
