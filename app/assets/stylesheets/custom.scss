@@ -14,8 +14,10 @@ html, body {
 }
 
 body {
-	background: rgba(7, 7, 7, 0.075);
+	background-image: url(image-path("pencil_food.jpg"));
+	background-size: cover;
 }
+
 h1,
 h2,
 h3,
@@ -37,7 +39,7 @@ h6 {
 	gap: 20px;
 	height: 100vh;
 	grid-template-columns: 120px 1fr 120px;
-	grid-template-rows: 100px 1fr 60px;
+	grid-template-rows: 100px 1fr 70px;
 	grid-template-areas:
 		"header header header"
 		"...... main   ......"
@@ -113,7 +115,7 @@ header {
 .header-links li {
 	list-style: none;
 	height: 40px;
-	width: 90px;
+	padding: 0 10px;
 	font-size: 18px;
 	border-radius: 5px;
 	background: rgba(104, 104, 44, 0.534);
@@ -123,13 +125,17 @@ header {
 
 .header-links li:hover {
 	box-shadow: 0 6px 6px -6px grey;
+		transform: scale(1.1);
 }
 .header-links a {
-	padding: 5px;
+	height: 100%;
+	width: 100%;
 	text-decoration: none;
 	color: black;
 	font-weight: 500;
-	align-self: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 
@@ -155,12 +161,13 @@ footer {
 	height: 40px;
 	width: 100%;
 	background: white;
-	place-self: end / center;
-	display: flex;
+	position: absolute;
+	bottom: 0;
+	display: xx;
 	justify-content: space-between;
 	align-items: center;
-	padding: 0 100px;
-	margin-bottom: 20px;
+	margin: 0;
+	padding: 0;
 }
 
 .bottom-links {
@@ -189,6 +196,10 @@ footer {
 	==================
 */ 
 
+.form {
+	background: rgba(3, 3, 3, 0.822);
+	color: white;
+}
 .form-title {
 	text-align: center;
 	font-size: 40px;
@@ -201,6 +212,7 @@ form {
 
 .field {
 	padding: 15px 0;
+	font-size: 16px;
 }
 
 input {
@@ -215,8 +227,60 @@ input {
 	border: none;
 	font-size: 20px;
 	cursor: pointer;
+	color: white;
 }
 
 .actions input:hover {
 	box-shadow: 0 6px 6px -6px grey;
+	transform: scale(1.1);
+}
+
+/* additional conditional devise links  from devise/shared/_links.html.erb */ 
+.extra-links {
+	text-align: center;
+	color: white;
+	padding: 30px 0;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.extra-links p {
+	width: 100%;
+}
+
+.devise-link {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-decoration: none;
+	margin: 0 20px;
+	color: black;
+	height: 35px;
+	width: 100px;
+	border-radius: 5px;
+	background: #000a8073;
+	color: white;
+}
+
+.devise-link:hover {
+	box-shadow: 0 6px 6px -6px grey;
+	transform: scale(1.1);
+}
+
+.cancel-btn {
+	background: rgba(255, 0, 0, 0.575);
+	width: 180px;
+	cursor: pointer;
+	border: none;
+
+}
+
+/* errors */ 
+.devise-errors {
+	padding: 0;
+}
+.devise-error {
+	list-style: none;
+	color: red;
 }
