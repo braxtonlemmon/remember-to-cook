@@ -3,7 +3,6 @@
 *:after {
 	box-sizing: border-box;
 	font-family: 'Raleway', sans-serif;
-
 }
 
 html, body {
@@ -14,8 +13,8 @@ html, body {
 }
 
 body {
-	background-image: url(image-path("pencil_food.jpg"));
-	background-size: cover;
+	// background-image: url(image-path("pencil_food.jpg"));
+	// background-size: contain;
 }
 
 h1,
@@ -58,7 +57,7 @@ header {
 	display: flex;
 	justify-content: space-around;
 	position: fixed;
-	height: 100px;
+	// height: 100px;
 	width: 100%;
 	z-index: 99;
 	grid-area: header;
@@ -67,76 +66,77 @@ header {
 
 .header {
 	display: grid;
-	gap: 10px;
+	gap: 5px;
 	grid-template-columns: 1fr 1fr;
 	grid-template-rows: 100%;
 	justify-content: space-between;
 	align-items: center;
-	padding: 5px 15px;
-	width: 80%;
+	padding: 5px;
+	width: 100%;
 
 }
 
 .header-left {
-	height: 80px;
 	display: flex;
 	align-items: center;
-}
-.logo {
-	height: 100%;
-	width: 60px;
+	.logo {
+		&:hover {
+				transform: rotate(-0.05turn);
+		}
+		img {
+			height: 100px;
+			display: block;
+			padding: 5px 0;
+		}
+	}
+	h1 {
+		justify-self: center;
+		flex: 3;
+		color: rgb(61, 61, 61);
+		text-shadow: lightgrey 0 -1.5px;
+		cursor: default;
+		font-size: 40px;
+		margin-left: 10px;
+		&:hover {
+		color: rgba(61, 61, 61, 0.5);
+		}
+	}
 }
 
-.logo:hover {
-	transform: rotate(-0.05turn);
-}
-
-.logo img {
-	height: 100%;
-}
-
-.header-left h1 {
-	justify-self: center;
-	flex: 3;
-	color: rgb(61, 61, 61);
-	text-shadow: lightgrey 0 -1.5px;
-	cursor: default;
-}
-
-.header-left h1:hover {
-	color: rgba(61, 61, 61, 0.5);
-}
 .header-links {
 	padding: 0;
 	display: flex;
 	justify-content: space-around;
+	li {
+		list-style: none;
+		height: 40px;
+		padding: 0 10px;
+		font-size: 18px;
+		border-radius: 5px;
+		background: rgba(104, 104, 44, 0.534);
+		display: flex;
+		justify-content: center;
+	}
+	&:hover {
+		box-shadow: 0 6px 6px -6px grey;
+			transform: scale(1.1);
+	}
+	a {
+		height: 100%;
+		width: 100%;
+		text-decoration: none;
+		color: black;
+		font-weight: 500;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
 }
 
-.header-links li {
-	list-style: none;
-	height: 40px;
-	padding: 0 10px;
-	font-size: 18px;
-	border-radius: 5px;
-	background: rgba(104, 104, 44, 0.534);
-	display: flex;
-	justify-content: center;
-}
 
-.header-links li:hover {
-	box-shadow: 0 6px 6px -6px grey;
-		transform: scale(1.1);
-}
-.header-links a {
-	height: 100%;
-	width: 100%;
-	text-decoration: none;
-	color: black;
-	font-weight: 500;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
+
+
+
 
 
 /*
