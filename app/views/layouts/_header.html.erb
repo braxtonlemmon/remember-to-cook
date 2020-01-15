@@ -4,16 +4,19 @@
 			<%= link_to image_tag("lego_chef.jpg", alt: "Remember To Cook logo"), root_path, class: "logo" %>
 			<h1>REMEMBER to COOK</h1>
 		</div>
-		<ul class="header-links">
-			<li><%= link_to "Home",    root_path %></li>
-			<% if user_signed_in? %>
-				<li><%= link_to "Edit profile", edit_user_registration_path %></li>
-				<li><%= link_to "My recipes", "#" %></li>
-				<li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
-			<% else %>
-				<li><%= link_to "Sign up", new_user_registration_path %></li>
-				<li><%= link_to "Log in",  new_user_session_path %></li>
-			<% end %>
-		</ul>
+		<div class='dropdown'>
+			<span>Links</span>
+			<ul class='dropdown-content'>
+				<li><%= link_to "Home",    root_path %></li>
+				<% if user_signed_in? %>
+					<li><%= link_to "Edit profile", edit_user_registration_path %></li>
+					<li><%= link_to "My recipes", "#" %></li>
+					<li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
+				<% else %>
+					<li><%= link_to "Sign up", new_user_registration_path %></li>
+					<li><%= link_to "Log in",  new_user_session_path %></li>
+				<% end %>
+			</ul>
+		</div>
 	</div>
 </header>

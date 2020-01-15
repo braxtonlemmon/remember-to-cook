@@ -15,6 +15,7 @@ html, body {
 body {
 	// background-image: url(image-path("pencil_food.jpg"));
 	// background-size: contain;
+	
 }
 
 h1,
@@ -58,7 +59,7 @@ header {
 	justify-content: space-around;
 	position: fixed;
 	// height: 100px;
-	width: 100%;
+	// width: 100%;
 	z-index: 99;
 	grid-area: header;
 	border-bottom: 5px double rgba(22, 69, 156, 0.644);
@@ -111,7 +112,7 @@ header {
 		list-style: none;
 		height: 40px;
 		padding: 0 10px;
-		font-size: 18px;
+		font-size: 16px;
 		border-radius: 5px;
 		background: rgba(104, 104, 44, 0.534);
 		display: flex;
@@ -133,7 +134,22 @@ header {
 	}
 }
 
+.dropdown {
+	position: relative;
+	display: inline-block;
+}
 
+.dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #f9f9f9;
+	min-width: 160px;
+	z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+	display: block;
+}
 
 
 
