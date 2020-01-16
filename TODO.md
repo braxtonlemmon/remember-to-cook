@@ -1,11 +1,11 @@
 <!-- 
 DID:
 	15/1: converted header links into dropdown menu via css
-
+  16/1: added JavaScript to toggle hamburger menu upon click
 -->
 
 <!-- 
 TODO:
-	- Fix page layout styling; the overflow-x is being weird and the header does not fill the page
+	- Add JS to close hamburger menu when clicking outside of menu, right now it only closes after clicking the hamburger again
 
 -->
