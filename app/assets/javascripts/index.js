@@ -13,4 +13,11 @@ document.addEventListener('DOMContentLoaded', () => {
   //     console.log('yo');
   //   }
   // }
+  window.onclick = (e) => {
+    const classList = e.target.classList;
+    if (!classList.contains('dropdown')) {
+      const content = document.querySelector('.dropdown-content');
+      content.classList.remove('dropdown-show');
+    }
+  }
 })

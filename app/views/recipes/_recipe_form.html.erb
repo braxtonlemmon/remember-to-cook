@@ -1,0 +1,8 @@
+<div class='container'>
+  <%= form_for(@recipe) do |f| %>
+    <%= f.hidden_field :author_id, value: current_user.id %>
+    <%= f.text_field :title, autofocus: true, placeholder: 'title' %>
+    <%= f.text_field :description, placeholder: 'recipe description' %>
+    <%= f.submit 'Create' %>
+  <% end %>
+</div>

@@ -1,0 +1,13 @@
+{
+  "sqltools.connections": [
+    {
+      "database": "remember-to-cook_development",
+      "dialect": "PostgreSQL",
+      "name": "remember-to-cook",
+      "password": "braxton",
+      "port": 5432,
+      "server": "localhost",
+      "username": "braxton"
+    }
+  ]
+}

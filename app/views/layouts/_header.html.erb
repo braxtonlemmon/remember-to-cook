@@ -6,7 +6,8 @@
 		</div>
     <div class="dropdown-container">
       <div class='dropdown'>
-        <img class="dropdown hamburger" src="assets/hamburger.svg">
+        <%= image_tag("hamburger.svg", :class => "dropdown hamburger")%>
+        <%# <img class="dropdown hamburger" src="assets/hamburger.svg"> %>
         <span class="dropdown menu-arrow">&#8964</span>
         <ul class='dropdown-content'>
           <li class='dropdown-item'><%= link_to "Home",    root_path %></li>
@@ -15,6 +16,8 @@
             <li class='dropdown-item'><%= link_to "Edit profile", edit_user_registration_path %></li>
             <hr>
             <li class='dropdown-item'><%= link_to "My recipes", "#" %></li>
+            <hr>
+            <li class='dropdown-item'><%= link_to "New recipe", new_recipe_path %></li>
             <hr>
             <li class='dropdown-item'><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
           <% else %>
