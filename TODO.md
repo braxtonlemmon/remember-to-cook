@@ -7,10 +7,12 @@ DID:
   21/1: recipe built and created upon click of create button on recipe form, added sqltools connection to view db
   22/1: added nested attributes to recipe model. added fields_for fields to new recipe form
   23/1: attempted to allow user to dynamically add ingredient form fields (still very messy)
+  30/1: added 'show' page for individual recipes
 -->
 
 <!-- 
 TODO:
 	- Come back to work on more JavaScript after learning more in TOP
   - Fix dynamic form with gem or revisions
+  -
 -->

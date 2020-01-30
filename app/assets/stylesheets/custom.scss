@@ -66,11 +66,13 @@ hr {
 	gap: 20px;
 	height: 100vh;
 	grid-template-columns: 120px 1fr 120px;
-	grid-template-rows: 100px 1fr 70px;
+  // grid-template-rows: 100px 1fr 50px 50px;
+  grid-template-rows: 2fr 5fr .5fr 1fr;
 	grid-template-areas:
 		"header header header"
 		"...... main   ......"
-		"footer footer footer";
+    "footer footer footer"
+    "debug  debug  debug";
 	justify-content: center;
 }
 
@@ -225,7 +227,7 @@ header {
 */
 .main {
 	grid-area: main;
-	grid-row: 2 / span 1;
+	// grid-row: 2 / span 1;
 	justify-self: stretch;
 	align-self: stretch;
 }
@@ -240,7 +242,7 @@ footer {
 	height: 40px;
 	width: 100%;
 	background: white;
-	position: absolute;
+	// position: absolute;
 	bottom: 0;
 	display: flex;
 	justify-content: space-between;
@@ -392,8 +394,7 @@ input {
 
 /* DEBUG DUMP */ 
 .debug_dump {
-
+  grid-area: debug;
   width: 100%;
-  margin-top: 200px;
 
 }
