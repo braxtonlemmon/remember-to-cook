@@ -1,6 +1,7 @@
 class RecipesController < ApplicationController
   def new
     @recipe = Recipe.new
+    @recipe.ingredients.build
   end
 
   def create
@@ -9,28 +10,35 @@ class RecipesController < ApplicationController
       puts '*********RECIPE MADE ************'
       redirect_to root_path
     else 
-      redirect_to root_path
+      render :new
     end
   end
 
   def edit
+    @recipe.ingredients.build
   end
   
   def update
   end
   
   def index
+    @recipes = Recipe.all
   end
 
   def show
   end
 
   def index
+    @recipes = current_user.recipes
   end
 
   private
 
     def recipe_params
-      params.require(:recipe).permit(:title, :description, :user_id, ingredients_attributes: [:name, :recipe_id], steps_attributes: [:step, :recipe_id])
+      params.require(:recipe).permit(
+        :title, :description, :user_id, 
+        Ingredient.attribute_names.map(&:to_sym).push(:_destroy), 
+        Step.attribute_names.map(&:to_sym).push(:_destroy)
+      )
     end
 end

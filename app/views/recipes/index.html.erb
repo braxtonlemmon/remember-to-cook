@@ -1,0 +1,7 @@
+
+<ul class='my-recipes-list'>
+  <h2>My Recipes</h2>
+  <% @recipes.each do |recipe| %>
+    <li class='recipe-item'><%= link_to recipe.title, '#' %></li>
+  <% end %>
+</ul>

@@ -1,0 +1,37 @@
+<%= simple_form_for(@recipe) do |f| %>
+  <%= f.error_notification %>
+  <%= f.hidden_field :user_id, value: current_user.id %>
+  
+  <div class="field">
+    <%= f.input :title %>
+  </div>
+
+  <div class="field">
+    <%= f.input :description %>
+  </div>
+
+    <%#= f.label "Ingredient:" %>
+    <%#= f.fields_for :ingredients do |builder| %>
+      <%#= render 'ingredient', f: builder %>
+      <%#= ingredient.text_field :name, placeholder: 'ingredient name' %> 
+    <%# end %>
+
+  <table class='table'>
+    <thead>
+      <tr>
+        <th></th>
+        <th>Ingredient</th>
+      </tr>
+    </thead>
+    <tbody class='fields'>
+      <%= f.simple_fields_for :ingredients do |builder| %>
+        <%= render 'ingredient', f: builder %>
+      <% end %>
+    </tbody>
+  </table>
+
+  <div class="actions">
+    <%= f.button :submit %>
+    <%= link_to_add_row('Add ingredient', f, :ingredients, class: 'btn') %>
+  <div/>
+<% end %>

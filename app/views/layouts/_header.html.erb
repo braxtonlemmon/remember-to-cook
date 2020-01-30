@@ -15,7 +15,7 @@
           <% if user_signed_in? %>
             <li class='dropdown-item'><%= link_to "Edit profile", edit_user_registration_path %></li>
             <hr>
-            <li class='dropdown-item'><%= link_to "My recipes", "#" %></li>
+            <li class='dropdown-item'><%= link_to "My recipes", recipes_path %></li>
             <hr>
             <li class='dropdown-item'><%= link_to "New recipe", new_recipe_path %></li>
             <hr>
